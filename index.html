@@ -260,6 +260,116 @@
         #hotspot-girl { top: 27%; left: 61%; width: 80px; height: 220px; }
         #hotspot-girl .hotspot-btn { top: 0px; left: -100px; }
 
+        .room-hero .animated-layer {
+            position: absolute;
+            pointer-events: none;
+            z-index: 70;
+        }
+
+        .girl-blink {
+            top: 28%;
+            left: 60.5%;
+            width: 70px;
+            height: 60px;
+            transform: translate(-50%, 0);
+        }
+
+        .girl-blink .eye {
+            position: absolute;
+            top: 10px;
+            width: 16px;
+            height: 8px;
+            background: rgba(74, 63, 53, 0.95);
+            border-radius: 999px;
+            transform-origin: center center;
+            animation: blink 5s infinite ease-in-out;
+        }
+
+        .girl-blink .eye.left { left: 0; }
+        .girl-blink .eye.right { right: 0; }
+
+        .coffee-steam {
+            top: 60%;
+            left: 50%;
+            width: 40px;
+            height: 140px;
+            transform: translate(-50%, 0);
+        }
+
+        .coffee-steam .steam-line {
+            position: absolute;
+            left: 50%;
+            width: 10px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            filter: blur(1px);
+            opacity: 0;
+            transform: translateX(-50%) translateY(0) scale(0.85);
+            animation: steam 3.8s infinite ease-in-out;
+        }
+
+        .coffee-steam .steam-line:nth-child(2) {
+            left: 20%;
+            animation-delay: 0.9s;
+        }
+        .coffee-steam .steam-line:nth-child(3) {
+            left: 80%;
+            animation-delay: 1.8s;
+        }
+
+        .tree-sway {
+            top: 16%;
+            left: 85%;
+            width: 160px;
+            height: 220px;
+            transform-origin: bottom center;
+            animation: sway 8s infinite ease-in-out;
+        }
+
+        .tree-sway .tree-trunk {
+            position: absolute;
+            bottom: 0;
+            left: 46%;
+            width: 14px;
+            height: 100px;
+            background: rgba(106, 78, 55, 0.85);
+            border-radius: 12px;
+        }
+
+        .tree-sway .tree-leaf {
+            position: absolute;
+            width: 70px;
+            height: 60px;
+            background: rgba(162, 197, 150, 0.85);
+            border-radius: 50% 50% 40% 40%;
+            filter: blur(0.5px);
+        }
+
+        .tree-sway .leaf-1 { top: 20px; left: 10px; }
+        .tree-sway .leaf-2 { top: 40px; left: 70px; width: 85px; height: 70px; }
+        .tree-sway .leaf-3 { top: 90px; left: 30px; width: 90px; height: 75px; }
+
+        @keyframes blink {
+            0%, 16%, 100% { transform: scaleY(1); opacity: 1; }
+            18%, 20% { transform: scaleY(0.1); opacity: 0.85; }
+        }
+
+        @keyframes steam {
+            0% { opacity: 0; transform: translateX(-50%) translateY(0) scale(0.8); }
+            20% { opacity: 0.4; }
+            50% { opacity: 0.85; transform: translateX(-50%) translateY(-40px) scale(1.05); }
+            90% { opacity: 0; transform: translateX(-50%) translateY(-90px) scale(1.2); }
+            100% { opacity: 0; }
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: translateX(-50%) rotate(0deg); }
+            25% { transform: translateX(-50%) rotate(1.2deg); }
+            50% { transform: translateX(-50%) rotate(0deg); }
+            75% { transform: translateX(-50%) rotate(-1.2deg); }
+        }
+
         .section {
             padding: 4rem 2rem;
             max-width: 1200px;
@@ -909,6 +1019,22 @@
             
             <div class="room-title">
                 欢迎来到Ariel的房间，试试看点击不同的物件吧~ ✨
+            </div>
+
+            <div class="animated-layer girl-blink">
+                <span class="eye left"></span>
+                <span class="eye right"></span>
+            </div>
+            <div class="animated-layer coffee-steam">
+                <div class="steam-line"></div>
+                <div class="steam-line"></div>
+                <div class="steam-line"></div>
+            </div>
+            <div class="animated-layer tree-sway">
+                <div class="tree-trunk"></div>
+                <div class="tree-leaf leaf-1"></div>
+                <div class="tree-leaf leaf-2"></div>
+                <div class="tree-leaf leaf-3"></div>
             </div>
 
             <!-- 热点1：红色笔记本 -> 小红书笔记 -->
